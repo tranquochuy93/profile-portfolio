@@ -1,0 +1,7 @@
+$primary-color: #fff;
+$secondary-color: #eece1a;
+$fw-n: 400;
+
+@mixin easeOut($second) {
+    transition: $second all ease-out;
+}
