@@ -4,12 +4,45 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+}
+
+.nav-bar.show .nav-brand {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .menu-btn {
+  cursor: pointer;
   position: absolute;
   right: 35px;
   top: 35px;
+  z-index: 2;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.menu-btn.close {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu-btn.close div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.close div:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+          transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.close div:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(7px, -6px);
+          transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .btn-line {
@@ -17,10 +50,23 @@
   height: 3px;
   background-color: #fff;
   margin-bottom: 5px;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 .btn-line:last-child {
   margin-bottom: 0;
+}
+
+.nav-brand {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #444;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
 }
 
 .nav-brand img {
@@ -28,6 +74,13 @@
   height: auto;
   border-radius: 50%;
   border: 2px solid #eece1a;
+}
+
+.nav-content {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #373737;
 }
 
 * {

@@ -5,12 +5,39 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
+
+    &.show {
+        .nav-brand {
+            transform: translate3d(0, 0, 0);
+            transition: all 0.5s ease-out;
+        }
+    }
 }
 
 .menu-btn {
+    cursor: pointer;
     position: absolute;
     right: 35px;
     top: 35px;
+    z-index: 2;
+    transition: transform 0.5s ease-out;
+
+    &.close {
+        transform: rotate(180deg);
+
+        div:nth-child(2) {
+            opacity: 0;
+        }
+    
+        div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+    
+        div:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
 }
 
 .btn-line {
@@ -18,6 +45,7 @@
     height: 3px;
     background-color: #fff;
     margin-bottom: 5px;
+    transition: transform 0.5s ease-out;
 
     &:last-child {
         margin-bottom: 0;
@@ -25,10 +53,22 @@
 }
 
 .nav-brand {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #444;
+    transform: translate3d(0, 100%, 0);
+
     img {
         width: 250px;
         height: auto;
         border-radius: 50%;
         border: 2px solid $secondary-color;
     }
+}
+.nav-content {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #373737;
 }

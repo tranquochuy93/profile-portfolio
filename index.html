@@ -7,6 +7,23 @@
     <title>Profile portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript">
+        window.onload = () => {
+            let menuBtn = document.querySelector('.menu-btn');
+
+            menuBtn.addEventListener('click', (event) => {
+
+                if (menuBtn.classList.contains('close')) {
+                    menuBtn.classList.remove('close');
+                    document.querySelector('.nav-bar').classList.remove('show');
+
+                } else {
+                    menuBtn.classList.add('close');
+                    document.querySelector('.nav-bar').classList.add('show');
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
